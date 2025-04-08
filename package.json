@@ -12,6 +12,7 @@
   "dependencies": {
     "@chakra-ui/react": "^3.15.1",
     "formik": "^2.4.6",
+    "motion": "^12.6.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
