@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import {
     createSystem,
@@ -13,8 +14,8 @@ const config = defineConfig({
     theme: {
         tokens: {
             colors: {
-                primary: { value: "#00000" },
-                secondary: { value: "#FFFFF" },
+                primary: { value: "#f5efef" },
+                secondary: { value: "#1c1a1a" },
             },
             fonts: {
                 body: { value: "Roboto, sans-serif" },
@@ -30,6 +31,7 @@ export default function App() {
         <ChakraProvider value={system}>
             <Box color="primary">
                 <Router>
+                    <Header />
                     <Routes>
                         <Route path="/" element={<Home />} />
                     </Routes>
