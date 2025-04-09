@@ -14,8 +14,8 @@ const config = defineConfig({
     theme: {
         tokens: {
             colors: {
-                primary: { value: "#f5efef" },
-                secondary: { value: "#1c1a1a" },
+                primary: { value: "#F87060" },
+                secondary: { value: "#102542" },
             },
             fonts: {
                 body: { value: "Roboto, sans-serif" },
@@ -36,7 +36,7 @@ export default function App() {
                         <Route path="/" element={<Home />} />
                     </Routes>
                 </Router>
-                <Footer backgroundColor="gray.100" />
+                <Footer backgroundColor="blue.300" />
             </Box>
         </ChakraProvider>
     );
