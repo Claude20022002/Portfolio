@@ -1,5 +1,6 @@
 import React from "react";
 import { Stack } from "@mui/material";
+import Header from "./components/Header";
 
 export default function App() {
     return (
@@ -10,9 +11,15 @@ export default function App() {
                 backgroundRepeat: "no-repeat",
                 minHeight: "100vh",
                 width: "100%",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                gap: 2,
+                padding: 2,
             }}
         >
-            App
+            <Header />
         </Stack>
     );
 }

@@ -1,17 +1,19 @@
-import React, { createContext, use, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-export const ThemeContext = createContext();
+export const ThemeMode = createContext();
 
-export default function ThemeContext() {
+export default function ThemeContext({ children }) {
     const [mode, setMode] = useState("light");
+
     const toggleMode = () => {
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
     };
+
     return (
-        <ThemeContext.Provider value={{ mode, toggleMode }}>
-            ThemeContext
-        </ThemeContext.Provider>
+        <ThemeMode.Provider value={{ mode, toggleMode }}>
+            {children}
+        </ThemeMode.Provider>
     );
 }
 
-export const useMode = useContext(ThemeContext);
+export const useMode = () => useContext(ThemeMode);
