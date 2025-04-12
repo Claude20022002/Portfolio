@@ -1,9 +1,10 @@
 import React from "react";
+import { Stack } from "@mui/material";
 
 export default function App() {
     return (
-        <div
-            style={{
+        <Stack
+            sx={{
                 backgroundImage: `url("/public/fond/abstract-envelope.svg")`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
@@ -12,6 +13,6 @@ export default function App() {
             }}
         >
             App
-        </div>
+        </Stack>
     );
 }
