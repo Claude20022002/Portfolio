@@ -1,6 +1,10 @@
 import { Button, Stack, Typography } from "@mui/material";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import React from "react";
-import SplitText from "./SplitText/SplitText"; // Assurez-vous que le chemin est correct
+import SplitText from "./SplitText/SplitText";
 import Typewriter from "./typerwrite/Typewriter";
 import { motion } from "framer-motion";
 
@@ -13,7 +17,7 @@ export default function Home() {
         <Stack
             id="home"
             component="section"
-            direction={{ xs: "column", md: "row" }} // Disposition en ligne pour les écrans md et plus
+            direction={{ xs: "column", md: "row" }}
             sx={{
                 justifyContent: "space-around",
                 alignItems: "center",
@@ -28,9 +32,9 @@ export default function Home() {
                 component="div"
                 className="home-text"
                 sx={{
-                    width: { xs: "100%", md: "40%" }, // Largeur ajustée pour les écrans
-                    textAlign: { xs: "center", md: "left" }, // Centré sur mobile
-                    padding: { xs: "0 20px", md: "9px" }, // Ajout de padding sur mobile
+                    width: { xs: "100%", md: "40%" },
+                    textAlign: { xs: "center", md: "left" },
+                    padding: { xs: "0 20px", md: "9px" },
                 }}
             >
                 <Typography
@@ -126,6 +130,76 @@ export default function Home() {
                     >
                         View my projects
                     </Button>
+                    <Stack
+                        direction="row"
+                        spacing={2}
+                        sx={{ justifyContent: "center" }}
+                    >
+                        <FacebookIcon
+                            onClick={() =>
+                                window.open(
+                                    "https://www.facebook.com/share/1Yj7qNMj4b/?mibextid=wwXIfr",
+                                    "_blank"
+                                )
+                            }
+                            sx={{
+                                cursor: "pointer",
+                                transition: "all 0.3s ease",
+                                "&:hover": {
+                                    transform: "scale(1.2)",
+                                    color: "#4267B2",
+                                },
+                            }}
+                        />
+                        <InstagramIcon
+                            onClick={() =>
+                                window.open(
+                                    "https://www.instagram.com/kimfuta_lusamote/",
+                                    "_blank"
+                                )
+                            }
+                            sx={{
+                                cursor: "pointer",
+                                transition: "all 0.3s ease",
+                                "&:hover": {
+                                    transform: "scale(1.2)",
+                                    color: "#E1306C",
+                                },
+                            }}
+                        />
+                        <GitHubIcon
+                            onClick={() =>
+                                window.open(
+                                    "https://github.com/Claude20022002",
+                                    "_blank"
+                                )
+                            }
+                            sx={{
+                                cursor: "pointer",
+                                transition: "all 0.3s ease",
+                                "&:hover": {
+                                    transform: "scale(1.2)",
+                                    color: "#333",
+                                },
+                            }}
+                        />
+                        <LinkedInIcon
+                            onClick={() =>
+                                window.open(
+                                    "https://www.linkedin.com/in/lusamote-kimfuta-b20000250/",
+                                    "_blank"
+                                )
+                            }
+                            sx={{
+                                cursor: "pointer",
+                                transition: "all 0.3s ease",
+                                "&:hover": {
+                                    transform: "scale(1.2)",
+                                    color: "#0077B5",
+                                },
+                            }}
+                        />
+                    </Stack>
                 </Stack>
             </Stack>
 
