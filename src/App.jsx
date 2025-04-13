@@ -16,6 +16,8 @@ export default function App() {
                 flexWrap: "wrap",
                 gap: 4,
                 padding: 2,
+                justifyContent: "center",
+                alignItems: "center",
             }}
         >
             <Header />
