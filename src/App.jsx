@@ -14,7 +14,7 @@ export default function App() {
                 minWidth: "100vw",
                 flexDirection: "column",
                 flexWrap: "wrap",
-                gap: 2,
+                gap: 4,
                 padding: 2,
             }}
         >

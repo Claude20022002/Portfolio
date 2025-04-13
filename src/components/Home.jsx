@@ -8,24 +8,30 @@ export default function Home() {
     const handleAnimationComplete = () => {
         console.log("All letters have animated!");
     };
+
     return (
         <Stack
             component="section"
-            spacing={2}
+            direction={{ xs: "column", md: "row" }} // Disposition en ligne pour les écrans md et plus
             sx={{
-                flexDirection: "row",
-                flexWrap: "wrap",
                 justifyContent: "space-around",
                 alignItems: "center",
                 width: "100%",
                 gap: { xs: "40px", sm: "20px" },
-                padding: {
-                    xs: "20px 16px",
-                    sm: "40px 24px",
-                },
+                padding: "20px",
+                margin: "0 auto",
             }}
         >
-            <Stack component="div" className="home-text">
+            {/* Texte de la section */}
+            <Stack
+                component="div"
+                className="home-text"
+                sx={{
+                    width: { xs: "100%", md: "40%" }, // Largeur ajustée pour les écrans
+                    textAlign: { xs: "center", md: "left" }, // Centré sur mobile
+                    padding: { xs: "0 20px", md: "9px" }, // Ajout de padding sur mobile
+                }}
+            >
                 <Typography
                     variant="h1"
                     sx={{
@@ -96,6 +102,27 @@ export default function Home() {
                     </Typography>
                 </motion.div>
             </Stack>
+
+            {/* Image de la section */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <img
+                    src="/images/avatar.png"
+                    alt="Claude"
+                    style={{
+                        width: "100%",
+                        maxWidth: "300px", // Taille maximale de l'image
+                    }}
+                />
+            </motion.div>
         </Stack>
     );
 }
