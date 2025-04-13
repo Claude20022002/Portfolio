@@ -98,7 +98,7 @@ export default function Home() {
                             strings: [
                                 "Claude",
                                 "Junior Web Developer",
-                                "Student in engineering",
+                                "Engineering student",
                             ],
                             cursor: "|",
                         }}
