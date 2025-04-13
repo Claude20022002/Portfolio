@@ -10,10 +10,9 @@ export default function App() {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 minHeight: "100vh",
-                width: "100%",
+                minWidth: "100vw",
                 flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
+
                 flexWrap: "wrap",
                 gap: 2,
                 padding: 2,
