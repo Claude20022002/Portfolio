@@ -118,11 +118,11 @@ export default function Home() {
                     <Button
                         variant="contained"
                         sx={{ width: "65%", padding: "10px" }}
-                        href="#projects"
+                        href="#projets"
                         component="a"
                         onClick={() => {
                             window.scrollTo({
-                                top: document.getElementById("projects")
+                                top: document.getElementById("projets")
                                     .offsetTop,
                                 behavior: "smooth",
                             });
