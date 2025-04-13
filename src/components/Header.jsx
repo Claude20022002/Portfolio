@@ -10,13 +10,12 @@ import {
     Box,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { motion } from "framer-motion"; // Import de framer-motion
+import { motion } from "framer-motion";
 
 export default function Header() {
-    const navItems = ["Home", "Projets", "AboutMe", "Contact"];
+    const navItems = ["Home", "AboutMe", "Projets", "Contact"];
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -61,11 +60,11 @@ export default function Header() {
                     cursor: "pointer",
                 }}
                 whileHover={{
-                    rotate: 360, // Rotation à 360 degrés au survol
+                    rotate: 360,
                 }}
                 transition={{
-                    duration: 1, // Durée de l'animation (en secondes)
-                    ease: "linear", // Animation fluide
+                    duration: 1,
+                    ease: "linear",
                 }}
             />
 

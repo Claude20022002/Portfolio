@@ -7,8 +7,10 @@ import React from "react";
 import SplitText from "./SplitText/SplitText";
 import Typewriter from "./typerwrite/Typewriter";
 import { motion } from "framer-motion";
+import { useMode } from "../context/ThemeContext";
 
 export default function Home() {
+    const { mode, toggleMode } = useMode() || { mode: "light" }; // Fallback pour éviter les erreurs
     const handleAnimationComplete = () => {
         console.log("All letters have animated!");
     };
@@ -32,7 +34,7 @@ export default function Home() {
                 component="div"
                 className="home-text"
                 sx={{
-                    width: { xs: "100%", md: "40%" },
+                    width: { xs: "100%", md: "50%" },
                     textAlign: { xs: "center", md: "left" },
                     padding: { xs: "0 20px", md: "9px" },
                 }}
@@ -78,8 +80,12 @@ export default function Home() {
                             md: "2.5rem",
                         },
                         fontWeight: "bold",
-                        background:
-                            "linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)",
+                        background: `linear-gradient(${
+                            mode === "light"
+                                ? "45deg, #2196F3 30%, #21CBF3 90%"
+                                : "45deg, #FF4081 30%, #FF80AB 90%"
+                        })`,
+                        backgroundClip: "text",
                         WebkitBackgroundClip: "text",
                         WebkitTextFillColor: "transparent",
                     }}
@@ -89,7 +95,12 @@ export default function Home() {
                             autoStart: true,
                             loop: true,
                             delay: 100,
-                            strings: ["Claude", "Junior Web Developer"],
+                            strings: [
+                                "Claude",
+                                "Junior Web Developer",
+                                "Student in engineering",
+                            ],
+                            cursor: "|",
                         }}
                     />
                 </Typography>
@@ -215,11 +226,13 @@ export default function Home() {
                 }}
             >
                 <img
+                    onClick={toggleMode}
                     src="/images/avatar.png"
                     alt="Claude"
                     style={{
                         width: "100%",
                         maxWidth: "300px", // Taille maximale de l'image
+                        cursor: "pointer",
                     }}
                 />
             </motion.div>
