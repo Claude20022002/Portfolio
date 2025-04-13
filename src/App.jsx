@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack } from "@mui/material";
 import Header from "./components/Header";
+import Home from "./components/Home";
 
 export default function App() {
     return (
@@ -12,13 +13,13 @@ export default function App() {
                 minHeight: "100vh",
                 minWidth: "100vw",
                 flexDirection: "column",
-
                 flexWrap: "wrap",
                 gap: 2,
                 padding: 2,
             }}
         >
             <Header />
+            <Home />
         </Stack>
     );
 }
