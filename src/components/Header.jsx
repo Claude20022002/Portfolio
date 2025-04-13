@@ -44,7 +44,7 @@ export default function Header() {
                 backdropFilter: "blur(20px)",
                 boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
                 borderRadius: "10px",
-                position: "relative",
+                position: "sticky",
                 zIndex: 1000,
             }}
         >
