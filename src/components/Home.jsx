@@ -11,6 +11,7 @@ export default function Home() {
 
     return (
         <Stack
+            id="home"
             component="section"
             direction={{ xs: "column", md: "row" }} // Disposition en ligne pour les écrans md et plus
             sx={{
