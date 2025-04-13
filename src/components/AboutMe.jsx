@@ -140,6 +140,7 @@ const AboutMe = () => {
                                 </Typography>
                             </motion.div>
                             <motion.button
+                                type="button"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 onClick={() => setOpenPreview(true)}
@@ -778,6 +779,7 @@ const AboutMe = () => {
                                 }}
                             >
                                 <motion.button
+                                    type="button"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     onClick={handleDownload}

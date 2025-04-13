@@ -27,7 +27,7 @@ export const certifications = [
         institution: "IBM",
         date: "Avril 2025",
         certificate:
-            "/certificates/Coursera-Developing-backend-applications-with-nodejs-and-express.pdf",
+            "/certificates/Coursera-Developing-back-end-apps-with-nodejs-and-express.pdf",
     },
     {
         title: "Advanced React",
