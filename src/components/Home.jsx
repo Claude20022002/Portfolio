@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography, Tooltip } from "@mui/material"; // Import de Tooltip
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -225,16 +225,18 @@ export default function Home() {
                     alignItems: "center",
                 }}
             >
-                <img
-                    onClick={toggleMode}
-                    src="/images/avatar.png"
-                    alt="Claude"
-                    style={{
-                        width: "100%",
-                        maxWidth: "300px", // Taille maximale de l'image
-                        cursor: "pointer",
-                    }}
-                />
+                <Tooltip title="Click to toggle theme mode🌄" arrow>
+                    <img
+                        onClick={toggleMode}
+                        src="/images/avatar.png"
+                        alt="Claude"
+                        style={{
+                            width: "100%",
+                            maxWidth: "300px", // Taille maximale de l'image
+                            cursor: "pointer",
+                        }}
+                    />
+                </Tooltip>
             </motion.div>
         </Stack>
     );
