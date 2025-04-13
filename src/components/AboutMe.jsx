@@ -20,97 +20,11 @@ import WorkIcon from "@mui/icons-material/Work";
 import CloseIcon from "@mui/icons-material/Close";
 import SchoolIcon from "@mui/icons-material/School";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-
-const skills = [
-    { name: "Python", icon: "/assets/svg/python.svg" },
-    { name: "React", icon: "/assets/svg/react-js.svg" },
-    { name: "JavaScript", icon: "/assets/svg/javascript.svg" },
-    { name: "HTML", icon: "/assets/svg/html.svg" },
-    { name: "CSS", icon: "/assets/svg/css.svg" },
-    { name: "MongoDB", icon: "/assets/svg/mongodb.svg" },
-    { name: "Ubuntu", icon: "/assets/svg/ubuntu.svg" },
-    { name: "PHP", icon: "/assets/svg/php.svg" },
-    { name: "Linux", icon: "/assets/svg/linux.svg" },
-    { name: "jQuery", icon: "/assets/svg/jquery.svg" },
-    { name: "Java", icon: "/assets/svg/java.svg" },
-    { name: "C", icon: "/assets/svg/C.svg" },
-    { name: "SASS", icon: "/assets/svg/sass.svg" },
-    { name: "TypeScript", icon: "/assets/svg/typescript.svg" },
-    { name: "Node.js", icon: "/assets/svg/nodejs.svg" },
-    { name: "Express", icon: "/assets/svg/express.svg" },
-    { name: "GitHub", icon: "/assets/svg/github.svg" },
-    { name: "MUI-JS", icon: "/assets/svg/mui.svg" },
-    { name: "Tailwind CSS", icon: "/assets/svg/tailwind.svg" },
-    { name: "MySQL", icon: "/assets/svg/mysql.svg" },
-];
-
-const experiences = [
-    { year: "2023", title: "Technical Assistant", company: "STI Company" },
-    { year: "2024", title: "Telemarketer", company: "MD CALLCENTER" },
-    {
-        year: "2023-2025",
-        title: "Active Member",
-        company: "HESTIM Code Masters",
-    },
-];
-
-const certifications = [
-    {
-        title: "Programming Foundations with JavaScript, HTML and CSS",
-        institution: "Duke University",
-        date: "Février 2025",
-        certificate:
-            "/certificates/Coursera-Programming-foundations-with_javascript-html-and-css.pdf",
-    },
-    {
-        title: "Introduction to Java",
-        institution: "LearnQuest",
-        date: "Décembre 2024",
-        certificate: "/certificates/Coursera-Introduction-java.pdf",
-    },
-    {
-        title: "React Basics",
-        institution: "Meta",
-        date: "Novembre 2024",
-        certificate: "/certificates/Coursera-React-basics.pdf",
-    },
-    {
-        title: "The Structured Query Language (SQL)",
-        institution: "University of Colorado Boulder",
-        date: "Juin 2024",
-        certificate:
-            "/certificates/Coursera-The-structured-query-language-sql.pdf",
-    },
-    {
-        title: "Work Smarter with Microsoft Word",
-        institution: "Microsoft",
-        date: "Juin 2024",
-        certificate:
-            "/certificates/Coursera-Work-smarter-with-microsoft-word.pdf",
-    },
-    {
-        title: "Relational Database Design",
-        institution: "University of Colorado Boulder",
-        date: "Avril 2024",
-        certificate: "/certificates/Coursera-Relational-database-design.pdf",
-    },
-    {
-        title: "Introduction to Python Programming",
-        institution: "University of Pennsylvania",
-        date: "Janvier 2024",
-        certificate:
-            "/certificates/Coursera-Introduction-to-python-programming.pdf",
-    },
-    {
-        title: "Introduction to Web Development",
-        institution: "University of California, Davis",
-        date: "Novembre 2023",
-        certificate:
-            "/certificates/Coursera-Introduction-to-web-development.pdf",
-    },
-];
+import { useMode } from "../context/ThemeContext";
+import { skills, certifications, experiences } from "../module/Module";
 
 const AboutMe = () => {
+    const { mode } = useMode() || { mode: "light" }; // Fallback pour éviter les erreurs
     const [activeSection, setActiveSection] = useState("skills");
     const [openPreview, setOpenPreview] = useState(false);
     const [selectedCertificate, setSelectedCertificate] = useState(null);
@@ -252,7 +166,16 @@ const AboutMe = () => {
             </motion.div>
 
             {/* Navigation des sections */}
-            <Box sx={{ display: "flex", justifyContent: "center", mb: 6 }}>
+            <Box
+                sx={{
+                    display: "flex",
+                    gap: 2,
+                    flexDirection: { xs: "column", sm: "row" },
+                    justifyContent: "center",
+                    mb: 6,
+                    padding: "20px",
+                }}
+            >
                 {["skills", "certifications", "experience"].map((section) => (
                     <motion.button
                         key={section}
@@ -409,7 +332,11 @@ const AboutMe = () => {
                                             transition={{ delay: 2.5 }}
                                             style={{
                                                 fontSize: "1rem",
-                                                color: "#21CBF3",
+                                                color: `${
+                                                    mode === "light"
+                                                        ? "#2196F3"
+                                                        : "#FF4081"
+                                                }`,
                                                 fontStyle: "italic",
                                             }}
                                         >
@@ -420,7 +347,12 @@ const AboutMe = () => {
                             </Box>
                         </motion.div>
 
-                        <Grid container spacing={3}>
+                        <Grid
+                            container
+                            spacing={3}
+                            className="grid-container"
+                            sx={{ justifyContent: "center" }}
+                        >
                             {certifications.map((cert, index) => (
                                 <Grid
                                     item
@@ -428,8 +360,10 @@ const AboutMe = () => {
                                     sm={6}
                                     md={4}
                                     key={cert.title}
+                                    className="grid-item"
                                 >
                                     <motion.div
+                                        className="biger-card"
                                         initial={{ opacity: 0, y: 50 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{
@@ -444,8 +378,11 @@ const AboutMe = () => {
                                         }}
                                     >
                                         <Card
+                                            className="card"
                                             sx={{
-                                                minHeight: 280,
+                                                cursor: "pointer",
+                                                width: 300,
+                                                height: 400,
                                                 display: "flex",
                                                 flexDirection: "column",
                                                 background:
