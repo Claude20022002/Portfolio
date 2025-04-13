@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import SplitText from "./SplitText/SplitText"; // Assurez-vous que le chemin est correct
 import Typewriter from "./typerwrite/Typewriter";
@@ -102,6 +102,31 @@ export default function Home() {
                         practicing...
                     </Typography>
                 </motion.div>
+                <Stack
+                    sx={{
+                        flexDirection: "column",
+                        gap: 2,
+                        alignItems: "center",
+                        justifyContent: "center",
+                        marginTop: "20px",
+                    }}
+                >
+                    <Button
+                        variant="contained"
+                        sx={{ width: "65%", padding: "10px" }}
+                        href="#projects"
+                        component="a"
+                        onClick={() => {
+                            window.scrollTo({
+                                top: document.getElementById("projects")
+                                    .offsetTop,
+                                behavior: "smooth",
+                            });
+                        }}
+                    >
+                        View my projects
+                    </Button>
+                </Stack>
             </Stack>
 
             {/* Image de la section */}
