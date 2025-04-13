@@ -47,7 +47,6 @@ export default function App() {
                 gap: 4,
                 padding: 2,
                 boxSizing: "border-box",
-                transition: "all 0.5s ease",
             }}
         >
             <Header />
