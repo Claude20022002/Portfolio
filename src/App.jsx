@@ -54,6 +54,25 @@ export default function App() {
             <AboutMe />
             <Projets />
             <Contact />
+            <Stack
+                sx={{
+                    position: "relative",
+                    width: "95%",
+                    margin: "0 auto",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    textAlign: "center",
+                    borderTop: "1px solid #ccc",
+                    borderRadius: "10px",
+                    padding: "10px",
+                    backgroundColor: mode === "light" ? "#fff" : "#000",
+                    color: mode === "light" ? "#000" : "#fff",
+                }}
+            >
+                <p>© 2025 Claude20022002. All rights reserved.</p>
+                <p>Made with ❤️ by Claude20022002</p>
+            </Stack>
         </Stack>
     );
 }
