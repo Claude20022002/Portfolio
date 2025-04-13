@@ -99,3 +99,163 @@ export const experiences = [
         company: "HESTIM Code Masters",
     },
 ];
+
+export const projet = [
+    {
+        title: "Bibliothèque en ligne",
+        tools: [
+            "React JS",
+            "Node.js",
+            "MongoDB",
+            "Express",
+            "MUI",
+            "Google Books API",
+        ],
+        repository: "https://github.com/Claude20022002/biblioth-que",
+        ImagePreview: [
+            {
+                page: 1,
+                image: "/projets/bibliothèque/page1.png",
+            },
+            {
+                page: 2,
+                image: "/projets/bibliothèque/page2.png",
+            },
+            {
+                page: 3,
+                image: "/projets/bibliothèque/page3.png",
+            },
+        ],
+    },
+    {
+        title: "Formulaire login",
+        tools: ["HTML", "CSS"],
+        repository: "https://github.com/Claude20022002/formulaire_HTML",
+        ImagePreview: [
+            {
+                page: 1,
+                image: "/projets/formulaire/page1.jpg",
+            },
+        ],
+    },
+    {
+        title: "GreenConvert",
+        tools: [
+            "React JS",
+            "Node.js",
+            "MySQL",
+            "Express",
+            "MUI",
+            "CSS",
+            "PhpMyAdmin",
+            "WampServer",
+            "Perenual API",
+            "Trefle API",
+        ],
+        repository: "https://github.com/Claude20022002/GreenConvert",
+        ImagePreview: [
+            {
+                page: 1,
+                image: "/projets/greenconvert/page1.png",
+            },
+            {
+                page: 2,
+                image: "/projets/greenconvert/page2.png",
+            },
+            {
+                page: 3,
+                image: "/projets/greenconvert/page3.png",
+            },
+            {
+                page: 4,
+                image: "/projets/greenconvert/page4.png",
+            },
+            {
+                page: 5,
+                image: "/projets/greenconvert/page5.png",
+            },
+            {
+                page: 6,
+                image: "/projets/greenconvert/page6.png",
+            },
+            {
+                page: 7,
+                image: "/projets/greenconvert/page7.png",
+            },
+            {
+                page: 8,
+                image: "/projets/greenconvert/page8.png",
+            },
+            {
+                page: 9,
+                image: "/projets/greenconvert/page9.png",
+            },
+        ],
+    },
+    {
+        title: "MyAnimeList",
+        tools: [
+            "React JS",
+            "Node.js",
+            "MongoDB",
+            "Express",
+            "MUI",
+            "CSS",
+            "axios",
+            "Jikan API",
+        ],
+        repository: "https://github.com/Claude20022002/MyAnime",
+        ImagePreview: [
+            {
+                page: 1,
+                image: "/projets/myanime/page1.jpg",
+            },
+            {
+                page: 2,
+                image: "/projets/myanime/page2.jpg",
+            },
+            {
+                page: 3,
+                image: "/projets/myanime/page3.jpg",
+            },
+            {
+                page: 4,
+                image: "/projets/myanime/page4.jpg",
+            },
+            {
+                page: 5,
+                image: "/projets/myanime/page5.jpg",
+            },
+            {
+                page: 6,
+                image: "/projets/myanime/page6.jpg",
+            },
+            {
+                page: 7,
+                image: "/projets/myanime/page7.jpg",
+            },
+            {
+                page: 8,
+                image: "/projets/myanime/page8.jpg",
+            },
+        ],
+    },
+    {
+        title: "weatherPlan",
+        tools: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "OpenWeatherMap API",
+            "axios",
+            "framer-motion",
+        ],
+        repository: "https://github.com/Claude20022002/weatherPlan",
+        ImagePreview: [
+            {
+                page: 1,
+                image: "/projets/weatherplan/page1.png",
+            },
+        ],
+    },
+];
