@@ -2,6 +2,9 @@ import React from "react";
 import { Stack } from "@mui/material";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Projets from "./components/Projets";
+import AboutMe from "./components/AboutMe";
+import Contact from "./components/Contact";
 
 export default function App() {
     return (
@@ -16,12 +19,13 @@ export default function App() {
                 flexWrap: "wrap",
                 gap: 4,
                 padding: 2,
-                justifyContent: "center",
-                alignItems: "center",
             }}
         >
             <Header />
             <Home />
+            <Projets />
+            <AboutMe />
+            <Contact />
         </Stack>
     );
 }

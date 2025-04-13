@@ -13,7 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { motion } from "framer-motion"; // Import de framer-motion
 
 export default function Header() {
-    const navItems = ["Home", "Projets", "About me", "Contact"];
+    const navItems = ["Home", "Projets", "AboutMe", "Contact"];
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
