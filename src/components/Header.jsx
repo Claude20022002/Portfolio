@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     Stack,
     useTheme,
@@ -16,8 +16,29 @@ export default function Header() {
     const navItems = ["Home", "AboutMe", "Projets", "Contact"];
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
+
+    const [showHeader, setShowHeader] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setShowHeader(false); // Scroll down
+            } else {
+                setShowHeader(true); // Scroll up
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [lastScrollY]);
 
     const handleMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
@@ -31,6 +52,8 @@ export default function Header() {
         <Stack
             component="header"
             sx={{
+                transform: showHeader ? "translateY(0)" : "translateY(-100%)",
+                transition: "transform 0.3s ease-in-out",
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 width: "95%",
                 height: "90px",
@@ -44,6 +67,7 @@ export default function Header() {
                 boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
                 borderRadius: "10px",
                 position: "sticky",
+                top: 0,
                 zIndex: 1000,
             }}
         >
@@ -59,13 +83,8 @@ export default function Header() {
                     transition: "transform 0.3s ease-in-out",
                     cursor: "pointer",
                 }}
-                whileHover={{
-                    rotate: 360,
-                }}
-                transition={{
-                    duration: 1,
-                    ease: "linear",
-                }}
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 1, ease: "linear" }}
             />
 
             {isMobile ? (
@@ -112,10 +131,7 @@ export default function Header() {
                     direction="row"
                     alignItems="center"
                     spacing={3}
-                    sx={{
-                        flexGrow: 1,
-                        justifyContent: "center",
-                    }}
+                    sx={{ flexGrow: 1, justifyContent: "center" }}
                 >
                     {navItems.map((item, index) => (
                         <Typography
